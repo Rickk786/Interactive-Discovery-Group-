@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost in the Woods</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Lost in the Woods</h1>
+        <p>Every choice has a consequence...</p>
+    </header>
+
+    <main>
+
+        <!-- Scene 1: Forest -->
+        <section id="scene1" class="scene">
+            <h2>Scene 1: Lost in the Forest</h2>
+
+            <img src="images/forest.jpg" alt="Dark forest">
+
+            <p>
+                You wake up alone in a mysterious forest.
+                Your friends are missing, your phone has
+                only 5% battery, and the sun is setting.
+            </p>
+
+            <p id="battery">Phone Battery: 5%</p>
+
+            <button onclick="searchBackpack()">
+                Search Backpack
+            </button>
+
+            <button onclick="checkPhone()">
+                Check Phone
+            </button>
+
+            <button onclick="showScene(2)">
+                Follow the Trail
+            </button>
+
+            <p id="forestResult"></p>
+        </section>
+
+
+        <!-- Scene 2: Crossroads -->
+        <section id="scene2" class="scene hidden">
+            <h2>Scene 2: The Crossroads</h2>
+
+            <img src="images/crossroads.jpg" alt="Forest crossroads">
+
+            <p>
+                You arrive at a crossroads.
+                The left path leads to an abandoned cabin,
+                while the right path follows a river.
+            </p>
+
+            <p>A wooden sign reads:</p>
+            <p><em>"Not every path leads home."</em></p>
+
+            <button onclick="choosePath('cabin')">
+                Go to the Cabin
+            </button>
+
+            <button onclick="choosePath('river')">
+                Follow the River
+            </button>
+
+            <button onclick="showScene(1)">
+                Return to Forest
+            </button>
+        </section>
+
+
+        <!-- Scene 3: Cabin -->
+        <section id="scene3" class="scene hidden">
+            <h2>Scene 3: The Abandoned Cabin</h2>
+
+            <img src="images/cabin.jpg" alt="Abandoned cabin">
+
+            <p>
+                Inside the cabin, you discover a locked
+                drawer and a mysterious note on the table.
+            </p>
+
+            <button onclick="examineNote()">
+                Examine Note
+            </button>
+
+            <button onclick="openDrawer()">
+                Open Drawer
+            </button>
+
+            <button onclick="showScene(4)">
+                Head to the River
+            </button>
+
+            <button onclick="showScene(2)">
+                Return to Crossroads
+            </button>
+
+            <p id="cabinResult"></p>
+        </section>
+
+
+        <!-- Scene 4: River -->
+        <section id="scene4" class="scene hidden">
+            <h2>Scene 4: The River</h2>
+
+            <img src="images/river.jpg" alt="Forest river">
+
+            <p>
+                You reach a river with a broken wooden bridge.
+                In the distance, you hear a rescue helicopter.
+                What will you do?
+            </p>
+
+            <button onclick="useMap()">
+                Use Map
+            </button>
+
+            <button onclick="useFlashlight()">
+                Signal with Flashlight
+            </button>
+
+            <button onclick="crossBridge()">
+                Cross the Broken Bridge
+            </button>
+
+            <button onclick="showScene(2)">
+                Return to Crossroads
+            </button>
+
+            <p id="riverResult"></p>
+
+            <button id="restartButton" class="hidden"
+                    onclick="restartGame()">
+                Play Again
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Lost in the Woods | Interactive Adventure</p>
+    </footer>
+
+</body>
+</html>
