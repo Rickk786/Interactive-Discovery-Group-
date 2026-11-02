@@ -14,17 +14,6 @@
     <header>
         <h1>Lost in the Woods</h1>
         <p>Every choice has a consequence...</p>
-
-        <!-- Status & Inventory Bar (State-based UI) -->
-        <div id="status-bar">
-            <span id="battery">Phone Battery: 5%</span>
-            <div id="inventory">
-                <span>Inventory: </span>
-                <span id="inv-flashlight" class="item hidden">🔦 Flashlight</span>
-                <span id="inv-map" class="item hidden">🗺️ Map</span>
-                <span id="inv-code" class="item hidden">🔑 Code (1947)</span>
-            </div>
-        </div>
     </header>
 
     <main>
@@ -32,104 +21,106 @@
         <!-- Scene 1: Forest -->
         <section id="scene1" class="scene">
             <h2>Scene 1: Lost in the Forest</h2>
-            <img src="images/forest.jpeg" alt="Dark forest">
+
+            <img src="images/forest.jpg" alt="Dark forest">
 
             <p>
-                You wake up alone in a mysterious forest as the sun sets.
-                Your phone has only 5% battery left.
+                You wake up alone in a mysterious forest.
+                Your friends are missing, and the sun is setting.
+                You need to find your way home.
             </p>
 
-            <div class="actions">
-                <button onclick="searchBackpack()">Search Backpack</button>
-                <button onclick="checkPhone()">Check Phone</button>
-                <button onclick="showScene(2)">Follow the Trail</button>
-            </div>
+            <button onclick="searchBackpack()">
+                Search Backpack
+            </button>
 
-            <p id="forestResult" class="result-text"></p>
+            <button onclick="showScene(2)">
+                Follow the Trail
+            </button>
+
+            <p id="forestResult"></p>
         </section>
 
 
         <!-- Scene 2: Crossroads -->
         <section id="scene2" class="scene hidden">
             <h2>Scene 2: The Crossroads</h2>
-            <img src="images/crossroads.jpeg" alt="Forest crossroads">
+
+            <img src="images/crossroads.jpg" alt="Forest crossroads">
 
             <p>
-                You reach a dark crossroads. 
-                Choose your direction carefully.
+                You arrive at a crossroads.
+                The left path leads to an abandoned cabin,
+                while the right path follows a river.
             </p>
 
-            <div class="actions">
-                <button onclick="choosePath('cabin')">Go to the Cabin</button>
-                <button onclick="choosePath('river')">Follow the River</button>
-                <button onclick="showScene(1)">Back to Forest</button>
-            </div>
+            <p><em>"Not every path leads home."</em></p>
+
+            <button onclick="choosePath('cabin')">
+                Go to the Cabin
+            </button>
+
+            <button onclick="choosePath('river')">
+                Follow the River
+            </button>
+
         </section>
 
 
         <!-- Scene 3: Cabin -->
         <section id="scene3" class="scene hidden">
             <h2>Scene 3: The Abandoned Cabin</h2>
-            <img src="images/cabin.jpeg" alt="Abandoned cabin">
+
+            <img src="images/cabin.jpg" alt="Abandoned cabin">
 
             <p>
-                Inside the quiet cabin, you spot a mysterious note and a locked drawer.
+                Inside the cabin, you discover a locked
+                drawer and a mysterious note on the table.
+                Could these help you escape?
             </p>
 
-            <div class="actions">
-                <button onclick="examineNote()">Examine Note</button>
-                <button onclick="openDrawer()">Open Drawer</button>
-                <button onclick="showScene(4)">Head to the River</button>
-                <button onclick="showScene(2)">Back to Crossroads</button>
-            </div>
+            <button onclick="examineNote()">
+                Examine Note
+            </button>
 
-            <p id="cabinResult" class="result-text"></p>
+            <button onclick="openDrawer()">
+                Open Drawer
+            </button>
+
+            <button onclick="showScene(4)">
+                Head to the River
+            </button>
+
+            <p id="cabinResult"></p>
         </section>
 
 
         <!-- Scene 4: River -->
         <section id="scene4" class="scene hidden">
             <h2>Scene 4: The River</h2>
-            <img src="images/river.jpeg" alt="Forest river">
+
+            <img src="images/river.jpg" alt="Forest river">
 
             <p>
-                You arrive at the rushing river. A rescue helicopter flies overhead!
+                You reach a river with a broken wooden bridge.
+                In the distance, you hear a rescue helicopter.
+                You must find a way to survive.
             </p>
 
-            <div class="actions">
-                <button onclick="useMap()">Use Map to Escape</button>
-                <button onclick="useFlashlight()">Signal Helicopter</button>
-                <button onclick="crossBridge()">Cross Broken Bridge</button>
-                <button onclick="showScene(2)">Back to Crossroads</button>
-            </div>
+            <button onclick="useMap()">
+                Use Map
+            </button>
 
-            <p id="riverResult" class="result-text"></p>
-        </section>
+            <button onclick="useFlashlight()">
+                Signal with Flashlight
+            </button>
 
+            <p id="riverResult"></p>
 
-        <!-- Scene 5: Rescued (Ending State 1) -->
-        <section id="scene5" class="scene hidden">
-            <h2>YOU SURVIVED & RESCUED!</h2>
-            <img src="images/rescued.jpeg" alt="Helicopter rescue scene">
-
-            <p id="rescuedText" class="result-text highlight-win"></p>
-
-            <div class="actions">
-                <button onclick="restartGame()">Play Again</button>
-            </div>
-        </section>
-
-
-        <!-- Scene 6: Game Over (Ending State 2) -->
-        <section id="scene6" class="scene hidden">
-            <h2>GAME OVER</h2>
-            <img src="images/gameover.jpeg" alt="Game over scene">
-
-            <p id="gameOverText" class="result-text highlight-fail"></p>
-
-            <div class="actions">
-                <button onclick="restartGame()">Play Again</button>
-            </div>
+            <button id="restartButton" class="hidden"
+                    onclick="restartGame()">
+                Play Again
+            </button>
         </section>
 
     </main>
