@@ -8,31 +8,11 @@ body {
 
 header {
     background-color: #0b1712;
-    padding: 20px 10px;
+    padding: 25px;
 }
 
 h1 {
     color: #b7d69a;
-    margin-bottom: 5px;
-}
-
-#status-bar {
-    background-color: #1a2e26;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 8px;
-    font-size: 14px;
-    border: 1px solid #325243;
-}
-
-.item {
-    background-color: #2b473b;
-    padding: 4px 8px;
-    border-radius: 5px;
-    margin-left: 5px;
 }
 
 main {
@@ -49,13 +29,9 @@ main {
 
 .scene img {
     width: 100%;
-    max-height: 380px;
+    max-height: 350px;
     object-fit: cover;
     border-radius: 10px;
-}
-
-.actions {
-    margin-top: 15px;
 }
 
 button {
@@ -63,35 +39,31 @@ button {
     color: white;
     border: none;
     padding: 12px 20px;
-    margin: 6px;
+    margin: 8px;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s;
+    font-size: 16px;
 }
 
 button:hover {
     background-color: #95bb87;
 }
 
-.hidden {
-    display: none !important;
+button:focus-visible {
+    outline: 3px solid #f4d88a;
+    outline-offset: 3px;
 }
 
-.result-text {
+.hidden {
+    display: none;
+}
+
+#forestResult,
+#cabinResult,
+#riverResult {
     color: #f4d88a;
     font-weight: bold;
-    margin-top: 15px;
-}
-
-.highlight-win {
-    color: #8edb8e;
-    font-size: 18px;
-}
-
-.highlight-fail {
-    color: #ff8b8b;
-    font-size: 18px;
+    margin-top: 20px;
 }
 
 footer {
@@ -99,7 +71,7 @@ footer {
     color: #aaa;
 }
 
-/* Responsive layout */
+/* Mobile layout */
 @media (max-width: 600px) {
     main {
         padding: 10px;
@@ -109,14 +81,9 @@ footer {
         padding: 15px;
     }
 
-    #status-bar {
-        flex-direction: column;
-        gap: 8px;
-    }
-
     button {
         display: block;
         width: 100%;
-        margin: 8px 0;
+        margin: 10px 0;
     }
 }
