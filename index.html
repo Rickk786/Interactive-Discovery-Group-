@@ -35,9 +35,8 @@
             <img src="images/forest.jpeg" alt="Dark forest">
 
             <p>
-                You wake up alone in a mysterious forest.
-                Your friends are missing, your phone has
-                only 5% battery, and the sun is setting.
+                You wake up alone in a mysterious forest as the sun sets.
+                Your phone has only 5% battery left.
             </p>
 
             <div class="actions">
@@ -56,18 +55,14 @@
             <img src="images/crossroads.jpeg" alt="Forest crossroads">
 
             <p>
-                You arrive at a crossroads.
-                The left path leads to an abandoned cabin,
-                while the right path follows a river.
+                You reach a dark crossroads. 
+                Choose your direction carefully.
             </p>
-
-            <p>A wooden sign reads:</p>
-            <p><em>"Not every path leads home."</em></p>
 
             <div class="actions">
                 <button onclick="choosePath('cabin')">Go to the Cabin</button>
                 <button onclick="choosePath('river')">Follow the River</button>
-                <button onclick="showScene(1)">Return to Forest</button>
+                <button onclick="showScene(1)">Back to Forest</button>
             </div>
         </section>
 
@@ -78,15 +73,14 @@
             <img src="images/cabin.jpeg" alt="Abandoned cabin">
 
             <p>
-                Inside the cabin, you discover a locked
-                drawer and a mysterious note on the table.
+                Inside the quiet cabin, you spot a mysterious note and a locked drawer.
             </p>
 
             <div class="actions">
                 <button onclick="examineNote()">Examine Note</button>
                 <button onclick="openDrawer()">Open Drawer</button>
                 <button onclick="showScene(4)">Head to the River</button>
-                <button onclick="showScene(2)">Return to Crossroads</button>
+                <button onclick="showScene(2)">Back to Crossroads</button>
             </div>
 
             <p id="cabinResult" class="result-text"></p>
@@ -96,19 +90,17 @@
         <!-- Scene 4: River -->
         <section id="scene4" class="scene hidden">
             <h2>Scene 4: The River</h2>
-            <img src="images/river.jpg" alt="Forest river">
+            <img src="images/river.jpeg" alt="Forest river">
 
             <p>
-                You reach a river with a broken wooden bridge.
-                In the distance, you hear a rescue helicopter.
-                What will you do?
+                You arrive at the rushing river. A rescue helicopter flies overhead!
             </p>
 
             <div class="actions">
-                <button onclick="useMap()">Use Map</button>
-                <button onclick="useFlashlight()">Signal with Flashlight</button>
-                <button onclick="crossBridge()">Cross the Broken Bridge</button>
-                <button onclick="showScene(2)">Return to Crossroads</button>
+                <button onclick="useMap()">Use Map to Escape</button>
+                <button onclick="useFlashlight()">Signal Helicopter</button>
+                <button onclick="crossBridge()">Cross Broken Bridge</button>
+                <button onclick="showScene(2)">Back to Crossroads</button>
             </div>
 
             <p id="riverResult" class="result-text"></p>
@@ -118,7 +110,7 @@
         <!-- Scene 5: Rescued (Ending State 1) -->
         <section id="scene5" class="scene hidden">
             <h2>YOU SURVIVED & RESCUED!</h2>
-            <img src="images/rescued.jpg" alt="Helicopter rescue scene">
+            <img src="images/rescued.jpeg" alt="Helicopter rescue scene">
 
             <p id="rescuedText" class="result-text highlight-win"></p>
 
@@ -131,7 +123,7 @@
         <!-- Scene 6: Game Over (Ending State 2) -->
         <section id="scene6" class="scene hidden">
             <h2>GAME OVER</h2>
-            <img src="images/gameover.jpg" alt="Game over river scene">
+            <img src="images/gameover.jpeg" alt="Game over scene">
 
             <p id="gameOverText" class="result-text highlight-fail"></p>
 
